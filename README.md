@@ -14,9 +14,9 @@
 
 | 场景 | 用什么 |
 |------|--------|
-| ≤ 15 个元素，一屏能说清 | `html-diagram` 静态图，或直接写散文 |
-| 一次性海报 / 配图 | `vast-draw-*` 系列 |
-| 解释一个概念 / 思维导图 | `vast-draw-thinking-logic` |
+| ≤ 15 个元素，一屏能说清 | [effective-html/skills/html-diagram](https://github.com/plannotator/effective-html/tree/main/skills/html-diagram) 静态图，或直接写散文 |
+| 一次性海报 / 配图 | [effective-html/skills/design-artifact](https://github.com/plannotator/effective-html/tree/main/skills/design-artifact) 或 [html-wireframe](https://github.com/plannotator/effective-html/tree/main/skills/html-wireframe) |
+| 解释一个概念 / 思维导图 | [effective-html/skills/design-artifact](https://github.com/plannotator/effective-html/tree/main/skills/design-artifact) 或 [html](https://github.com/plannotator/effective-html/tree/main/skills/html) |
 
 命中以下任一条才继续：节点数 ≥ 30、有 ≥ 2 层展开需求、结论要靠计数撑住、需要深链贴进工单。
 
@@ -58,8 +58,13 @@ Agent 自动加载 `SKILL.md` 并按 8 步工作流执行：锁真源 → 解析
 
 ## 相关
 
+- [plannotator/effective-html](https://github.com/plannotator/effective-html) — 上游通用 HTML artifacts 约定来源（`html` / `html-diagram` / `design-artifact` / `html-wireframe` / `html-prototype` / `html-plan`）。本 skill 沿用其「单文件、内联、无构建、无外部服务」约定
 - [VastFuture Skill Hub](https://github.com/VastFuture/vast-skill-hub) — 组织索引
-- 沿用 `html-diagram` 的通用约定（单文件、内联、无构建），本 skill 是它的"几十到上百节点"工程化档
+
+## 依赖
+
+**零组织内私有依赖**。运行时只需要 Python 3（执行 `scripts/`）和现代浏览器（打开产物 HTML）。
+不依赖任何 vast-* / 私有 skill——所有引用都指向公开上游 `plannotator/effective-html`。
 
 ---
 

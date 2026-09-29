@@ -1,6 +1,6 @@
 ---
 name: drilldown-diagram
-description: "把大型结构化配置（Dify DSL YAML、CI 流水线、K8s manifest、调用图、模块依赖、状态机、消息流）渲染成单文件自包含、可点击下钻的 HTML 图：宏观一张图 → 分组页 → 单节点详情页，hash 深链可分享、Esc 与面包屑 zoom out。当用户说「画个图把里边的逻辑都画出来」「可下钻的图」「zoom in 看细节、zoom out 控全局」「宏观链路图」「节点级展开」「把这份 YAML/DSL/配置可视化成页面」「整条链路画一张地图」时使用。Actions: draw, visualize, diagram, map, drill down, expand per node, render, annotate。名词: 链路图、拓扑图、流程图、分层 DAG、下钻、缩放、深链、脱敏、Playwright 自检。沿用 html-diagram 的通用约定（单文件、内联 CSS/JS、无构建、无外部服务），本技能负责的是「几十到上百个节点、多层展开、数字必须可信、凭证必须脱敏」这一档图的工程化做法。"
+description: "把大型结构化配置（Dify DSL YAML、CI 流水线、K8s manifest、调用图、模块依赖、状态机、消息流）渲染成单文件自包含、可点击下钻的 HTML 图：宏观一张图 → 分组页 → 单节点详情页，hash 深链可分享、Esc 与面包屑 zoom out。当用户说「画个图把里边的逻辑都画出来」「可下钻的图」「zoom in 看细节、zoom out 控全局」「宏观链路图」「节点级展开」「把这份 YAML/DSL/配置可视化成页面」「整条链路画一张地图」时使用。Actions: draw, visualize, diagram, map, drill down, expand per node, render, annotate。名词: 链路图、拓扑图、流程图、分层 DAG、下钻、缩放、深链、脱敏、Playwright 自检。沿用 plannotator/effective-html（https://github.com/plannotator/effective-html）的通用 HTML artifacts 约定（单文件、内联 CSS/JS、无构建、无外部服务），本技能负责的是「几十到上百个节点、多层展开、数字必须可信、凭证必须脱敏」这一档图的工程化做法。下游不依赖任何组织内私有 skill。"
 ---
 
 # Drill-down Diagram
@@ -17,9 +17,9 @@ description: "把大型结构化配置（Dify DSL YAML、CI 流水线、K8s mani
 
 先回答一个问题：**读者需要按节点逐个查细节吗？**
 
-- 真源 ≤ 15 个元素、一屏能说清 → 用 `html-diagram` 出一张静态图，或直接写散文。别建多视图。
-- 只是要一张给人看的海报 → 用 `vast-draw-*` 系列。
-- 要的是「讲清楚一个概念」 → 用 `vast-draw-thinking-logic`。
+- 真源 ≤ 15 个元素、一屏能说清 → 用 [effective-html/skills/html-diagram](https://github.com/plannotator/effective-html/tree/main/skills/html-diagram) 出一张静态图，或直接写散文。别建多视图。
+- 只是要一张给人看的海报 / 低保真线框 → 用 [effective-html/skills/design-artifact](https://github.com/plannotator/effective-html/tree/main/skills/design-artifact) 或 [html-wireframe](https://github.com/plannotator/effective-html/tree/main/skills/html-wireframe)。
+- 要的是「讲清楚一个概念」/ 通用 HTML 产物 → 用 [effective-html/skills/design-artifact](https://github.com/plannotator/effective-html/tree/main/skills/design-artifact) 或 [html](https://github.com/plannotator/effective-html/tree/main/skills/html)。
 
 命中以下任一条才继续：节点数 ≥ 30；有 ≥ 2 层展开需求；结论要靠计数撑住；需要深链贴进工单/评审。
 

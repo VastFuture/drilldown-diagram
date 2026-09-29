@@ -41,7 +41,7 @@
 ├── references/
 │   ├── data-discipline.md      # 数据纪律：口径、脱敏、复算性
 │   ├── interaction-spec.md     # 交互契约：DOM、键盘、hash 路由（脚本按此自检）
-│   └── pitfalls.md             # 18 个真实坑 + 4 个安全坑（症状→根因→修法）
+│   └── pitfalls.md             # 7 个主题分组（口径 / 生成器 / 布局 / CSS / 交互 / 自检 / 安全）
 └── scripts/
     ├── dag_layout.py           # 分层 DAG 布局
     ├── leak_scan.py            # 脱敏扫描（密钥、token、内部 URL）
@@ -54,7 +54,9 @@
 
 > "用 drilldown-diagram 把 `<path/to/source.yaml>` 可视化"
 
-Agent 自动加载 `SKILL.md` 并按 8 步工作流执行：锁真源 → 解析 → 脱敏 → 布局 → 渲染 → 三宽度自检 → 复现性检查 → 登记。
+Agent 自动加载 `SKILL.md` 并按工作流执行：先做 Step 0 判定是否值得做 →
+核心 8 步（锁真源 → 解析 → 脱敏 → 布局 → 渲染 → Gate A 交付确认 →
+三宽度自检 → 复现性 → 登记）。
 
 ## 相关
 

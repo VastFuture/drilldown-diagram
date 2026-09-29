@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# 调试产物（skill 仓库本身不持有业务产物；产物在用户项目里生成）
+*.html
+!references/**/*.html
+
+# 编辑器 / OS
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# 本地调试
+*.log
+/tmp/

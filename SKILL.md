@@ -83,7 +83,7 @@ python3 scripts/dag_layout.py --json graph.json     # {"layers":27,"widest":5,"c
 DOM 契约、缩放档位、hash 路由、可达性、打印样式全在 `references/interaction-spec.md`。
 自检脚本按这份契约工作，偏离契约就要同步改脚本。
 
-写视图前读一次 `references/pitfalls.md`——17 条踩坑加 4 条安全，全部来自真实构建，不是想象的风险。
+写视图前读一次 `references/pitfalls.md`——按 7 个主题分组（口径 / 生成器 / 布局 / CSS / 交互 / 自检 / 安全），全部来自真实构建，不是想象的风险。
 
 ### Gate A: 交付确认 ⛔ 必须等用户点头
 
@@ -153,7 +153,8 @@ python3 scripts/leak_scan.py <产物> <生成器目录>
 
 ## 参考实现
 
-`docs/tools/qeeq-flow/`（同仓库内）是一个跑通的完整例子：Dify advanced-chat DSL
-→ 52 节点 / 63 边 / 67 视图 / 27 层，含 `make_redact.py` 的结构化脱敏与多宽度自检。
-产物在 `docs/architecture/zcs-qeeq-agent-flow.html`，事故复盘在
-`docs/lessons/2026-09-29-drilldown-diagram-engineering-lessons.md`。
+本 skill 只产出方法论 + 工具脚本，不持有具体业务的可视化产物。
+完整端到端案例（Dify advanced-chat DSL → 52 节点 / 63 边 / 67 视图 / 27 层，
+含 `make_redact.py` 结构化脱敏与三宽度自检）位于 VastFuture 组织下的
+同系列仓库（如 `qeeq-*` / `vast-site-studio` 等），事故复盘与产物索引
+请在 [VastFuture Skill Hub](https://github.com/VastFuture/vast-skill-hub) 查找。
